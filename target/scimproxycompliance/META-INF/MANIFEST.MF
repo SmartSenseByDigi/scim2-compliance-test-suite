@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Built-By: elliot
+Class-Path: scimcore-0.1.jar servlet-api-2.4.jar commons-validator-1.4
+ .0.jar commons-beanutils-1.8.3.jar commons-digester-1.8.jar commons-l
+ ang-2.2.jar commons-logging-1.1.1.jar commons-configuration-1.6.jar c
+ ommons-collections-3.2.1.jar commons-beanutils-core-1.8.0.jar jetty-s
+ ervlet-tester-7.0.0.pre5.jar jetty-webapp-7.0.0.pre5.jar jetty-7.0.0.
+ pre5.jar servlet-api-3.0.pre4.jar jetty-util-7.0.0.pre5.jar jetty-xml
+ -7.0.0.pre5.jar jetty-security-7.0.0.pre5.jar commons-httpclient-3.1.
+ jar commons-codec-1.2.jar not-yet-commons-ssl-0.3.9.jar log4j-1.2.13.
+ jar commons-fileupload-1.2.2.jar commons-io-2.0.1.jar jersey-json-1.8
+ .jar jettison-1.1.jar jaxb-impl-2.2.3-1.jar jaxb-api-2.2.2.jar stax-a
+ pi-1.0-2.jar activation-1.1.jar jackson-core-asl-1.7.1.jar jackson-ma
+ pper-asl-1.7.1.jar jackson-jaxrs-1.7.1.jar jackson-xc-1.7.1.jar jerse
+ y-core-1.8.jar jersey-server-1.8.jar asm-3.1.jar junit-4.10.jar hamcr
+ est-core-1.1.jar jsr173_api-1.0.jar xmlbeans-2.4.0.jar stax-api-1.0.1
+ .jar joda-time-1.6.2.jar org.wso2.charon3.core-3.0.0.jar json-2009021
+ 1.jar axiom-api-1.2.11.jar geronimo-activation_1.1_spec-1.0.2.jar ger
+ onimo-javamail_1.4_spec-1.6.jar jaxen-1.1.1.jar geronimo-stax-api_1.0
+ _spec-1.0.1.jar axiom-impl-1.2.11.jar wstx-asl-3.2.9.jar slf4j-api-1.
+ 7.21.jar httpclient-4.5.3.jar httpcore-4.4.6.jar pdfbox-2.0.7.jar fon
+ tbox-2.0.7.jar pdfbox-tools-2.0.7.jar pdfbox-debugger-2.0.7.jar prefl
+ ight-2.0.7.jar xmpbox-2.0.7.jar
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8
+

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="compliance:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2d3281c4-e6b5-41b1-a0ba-5cc48e67ac81" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/CSP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/Compliance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/ComplienceUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/Schema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/SchemaAttribute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/ServiceProviderConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/enteties/AuthMetod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/enteties/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/enteties/Statistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/enteties/TestResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/enteties/Wire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/exception/CritialComplienceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/exception/TestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/AttributeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/ConfigTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/DeleteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/FilterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/PatchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/PostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/PutTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/ResourceCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/SkippingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/SortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/simplecloud/scimproxy/compliance/test/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/entities/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/entities/Statistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/entities/TestResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/entities/Wire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/exception/ComplianceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/exception/CriticalComplianceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/exception/GeneralComplianceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/httpclient/HTTPClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/objects/SCIMResourceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/objects/SCIMSchema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/objects/SCIMServiceProviderConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/pdf/PDFGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/protocol/Compliance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/protocol/ComplianceTestMetaDataHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/protocol/ComplianceUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/BulkTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/ConfigTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/FilterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/GroupTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/ListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/MeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/PaginationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/ResourceTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/SchemaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/SortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/TestCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/UserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/tests/common/ResponseValidateTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/utils/ComplianceConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/info/wso2/scim2/compliance/utils/SchemaBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/BinaryDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/BinaryEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/CharEncoding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/Decoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/DecoderException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/Encoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/EncoderException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/binary/Base64.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/binary/BaseNCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/codec/binary/StringUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/org/apache/commons/httpclient/methods/PatchMethod.java" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-445320090">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-2542" />
+    <option name="y" value="56" />
+    <option name="width" value="2225" />
+    <option name="height" value="1297" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="compliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scim2-compliance-test-suite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scim2-compliance-test-suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scim2-compliance-test-suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scim2-compliance-test-suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539109387351" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Debug Locally">
+    <configuration name="All in compliance" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="compliance" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Debug Locally" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="compliance:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_compliance" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50356" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="compliance:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_compliance" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50356" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Debug Locally" />
+      <item itemvalue="Android JUnit.All in compliance" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.All in compliance" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d3281c4-e6b5-41b1-a0ba-5cc48e67ac81" name="Default Changelist" comment="" />
+      <created>1539109046744</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539109046744</updated>
+      <workItem from="1539109049278" duration="483000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_compliance - 2018.10.09 at 14h 19m 03s.xml">
+      <configuration name="All in compliance" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_compliance - 2018.10.09 at 14h 20m 27s.xml">
+      <configuration name="All in compliance" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_compliance - 2018.10.09 at 14h 21m 08s.xml">
+      <configuration name="All in compliance" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_compliance - 2018.10.09 at 14h 21m 10s.xml">
+      <configuration name="All in compliance" configurationId="AndroidJUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="483000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-2560" y="23" width="2560" height="1417" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Web" sideWeight="0.50062895" side_tool="true" visible="true" weight="0.11318507" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49937108" visible="true" weight="0.11318507" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" weight="0.32981133" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>
