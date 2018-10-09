@@ -52,9 +52,8 @@ import java.util.ArrayList;
 /**
  * This class is for pagination related test cases.
  */
-public class PaginationTest {
+public class PaginationTest extends BaseTest{
 
-    private ComplianceTestMetaDataHolder complianceTestMetaDataHolder;
     private String usersURL  = null;
     private String groupURL  = null;
     private ArrayList<String> groupIDs = new ArrayList<>();
@@ -66,46 +65,13 @@ public class PaginationTest {
      */
     public PaginationTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
 
-        this.complianceTestMetaDataHolder = complianceTestMetaDataHolder;
+        super(complianceTestMetaDataHolder);
 
         usersURL =  complianceTestMetaDataHolder.getUrl() +
                 ComplianceConstants.TestConstants.USERS_ENDPOINT;
 
         groupURL =  complianceTestMetaDataHolder.getUrl() +
                 ComplianceConstants.TestConstants.GROUPS_ENDPOINT;
-    }
-
-    /**
-     * Method to handle test cases.
-     * @return
-     * @throws ComplianceException
-     */
-    public ArrayList<TestResult> performTest() throws ComplianceException {
-        //perform pagination tests
-        ArrayList<TestResult> testResults = new ArrayList<>();
-        Method[] methods = this.getClass().getMethods();
-        for (Method method : methods) {
-            TestCase annos = method.getAnnotation(TestCase.class);
-            if (annos != null) {
-                try {
-                    testResults = (ArrayList<TestResult>) method.invoke(this);
-                } catch (InvocationTargetException e) {
-                    try{
-                        throw  e.getCause();
-                    } catch (ComplianceException e1) {
-                        throw e1;
-                    } catch (GeneralComplianceException e1){
-                        testResults.add(e1.getResult());
-                    } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in Pagination Test.");
-                    }
-                } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in Pagination Test.");
-                }
-
-            }
-        }
-        return testResults;
     }
 
     /**

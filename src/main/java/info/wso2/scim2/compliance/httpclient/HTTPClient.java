@@ -82,22 +82,13 @@ public class HTTPClient {
             byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
             String authHeader = "Basic " + new String(encodedAuth);
             method.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
+        } else {
+            auth = complianceTestMetaDataHolder.getAuthorization_header();
+            if(auth != null && !auth.equals("")){
+                method.setHeader(HttpHeaders.AUTHORIZATION, auth);
+            }
         }
         return method;
     }
-
-    public static HttpRequestBase setAuthorizationHeader (String userName, String password,
-                                                          HttpRequestBase method) {
-
-        String auth = userName + ":" + password;
-        if (!auth.equals(":")) {
-            byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-            String authHeader = "Basic " + new String(encodedAuth);
-            method.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
-        }
-        return method;
-    }
-
 }
-
 

@@ -44,9 +44,8 @@ import java.util.ArrayList;
 /**
  *  This class performs the tests related to /Bulk endpoint.
  */
-public class BulkTest {
+public class BulkTest extends BaseTest {
 
-    private ComplianceTestMetaDataHolder complianceTestMetaDataHolder;
     private String url;
     private ArrayList<String> createdUserLocations = new ArrayList<>();
 
@@ -55,43 +54,9 @@ public class BulkTest {
      * @param complianceTestMetaDataHolder
      */
     public BulkTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
-
-        this.complianceTestMetaDataHolder = complianceTestMetaDataHolder;
-
+        super(complianceTestMetaDataHolder);
         url =  complianceTestMetaDataHolder.getUrl() +
                 ComplianceConstants.TestConstants.BULK_ENDPOINT;
-    }
-
-    /**
-     * Main method which handles the sub tests.
-     * @return
-     * @throws ComplianceException
-     */
-    public ArrayList<TestResult> performTest() throws ComplianceException {
-        ArrayList<TestResult> testResults = new ArrayList<>();
-        Method[] methods = this.getClass().getMethods();
-        for (Method method : methods) {
-            TestCase annos = method.getAnnotation(TestCase.class);
-            if (annos != null) {
-                try {
-                    testResults.add((TestResult) method.invoke(this));
-                } catch (InvocationTargetException e) {
-                    try{
-                        throw  e.getCause();
-                    } catch (ComplianceException e1) {
-                        throw e1;
-                    } catch (GeneralComplianceException e1){
-                        testResults.add(e1.getResult());
-                    } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in Bulk Test.");
-                    }
-                } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in Bulk Test.");
-                }
-
-            }
-        }
-        return testResults;
     }
 
     /**
