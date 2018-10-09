@@ -69,7 +69,7 @@ public class Compliance extends HttpServlet {
         }
 
         //TODO : Add other authentication logging checks as well.
-        if ((username.isEmpty() || password.isEmpty())) {
+        if ((username.isEmpty() || password.isEmpty()) && authorizationHeader.isEmpty()) {
             ComplianceException BadRequestException = new ComplianceException();
             BadRequestException.setDetail("Authorization with service provider failed.");
             return (new Result(BadRequestException.getDetail()));
@@ -184,7 +184,11 @@ public class Compliance extends HttpServlet {
         ArrayList<TestResult> listTestResults = new ArrayList<>();
         try {
             listTestResults = listTest.performTest();
-        } catch (ComplianceException e) {
+        } 
+        catch(CriticalComplianceException e){
+            return (new Result(e.getDetail()));
+        }
+        catch (ComplianceException e) {
             return (new Result(e.getDetail()));
         }
         for (TestResult testResult : listTestResults) {
@@ -196,7 +200,11 @@ public class Compliance extends HttpServlet {
         ArrayList<TestResult> filterTestResults = new ArrayList<>();
         try {
             filterTestResults = filterTest.performTest();
-        } catch (ComplianceException e) {
+        } 
+        catch(CriticalComplianceException e){
+            return (new Result(e.getDetail()));
+        }
+        catch (ComplianceException e) {
             return (new Result(e.getDetail()));
         }
         for (TestResult testResult : filterTestResults) {
@@ -208,7 +216,11 @@ public class Compliance extends HttpServlet {
         ArrayList<TestResult> paginationTestResults = new ArrayList<>();
         try {
             paginationTestResults = paginationTest.performTest();
-        } catch (ComplianceException e) {
+        } 
+        catch(CriticalComplianceException e){
+            return (new Result(e.getDetail()));
+        }
+        catch (ComplianceException e) {
             return (new Result(e.getDetail()));
         }
         for (TestResult testResult : paginationTestResults) {
@@ -222,7 +234,11 @@ public class Compliance extends HttpServlet {
             if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getSortSupported()){
                 try {
                     sortTestResults = sortTest.performTest();
-                } catch (ComplianceException e) {
+                } 
+                catch(CriticalComplianceException e){
+                    return (new Result(e.getDetail()));
+                }
+                catch (ComplianceException e) {
                     return (new Result(e.getDetail()));
                 }
                 for (TestResult testResult : sortTestResults) {
@@ -242,7 +258,11 @@ public class Compliance extends HttpServlet {
             if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getBulkSupported()){
                 try {
                     bulkTestResults = bulkTest.performTest();
-                } catch (ComplianceException e) {
+                } 
+                catch(CriticalComplianceException e){
+                    return (new Result(e.getDetail()));
+                }
+                catch (ComplianceException e) {
                     return (new Result(e.getDetail()));
                 }
                 for (TestResult testResult : bulkTestResults) {

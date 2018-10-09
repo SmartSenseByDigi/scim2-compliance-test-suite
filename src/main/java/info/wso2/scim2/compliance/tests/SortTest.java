@@ -54,9 +54,8 @@ import java.util.HashMap;
 /**
  * This class consists of sorting test cases.
  */
-public class SortTest {
+public class SortTest extends BaseTest{
 
-    private ComplianceTestMetaDataHolder complianceTestMetaDataHolder;
     private String usersURL  = null;
     private String groupURL  = null;
     private HashMap<String,String> groupIDs = new HashMap<>();
@@ -67,9 +66,7 @@ public class SortTest {
      * @param complianceTestMetaDataHolder
      */
     public SortTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
-
-        this.complianceTestMetaDataHolder = complianceTestMetaDataHolder;
-
+        super(complianceTestMetaDataHolder);
         usersURL =  complianceTestMetaDataHolder.getUrl() +
                 ComplianceConstants.TestConstants.USERS_ENDPOINT;
 
@@ -77,33 +74,6 @@ public class SortTest {
                 ComplianceConstants.TestConstants.GROUPS_ENDPOINT;
     }
 
-    public ArrayList<TestResult> performTest() throws ComplianceException {
-
-        ArrayList<TestResult> testResults = new ArrayList<>();
-        Method[] methods = this.getClass().getMethods();
-        for (Method method : methods) {
-            TestCase annos = method.getAnnotation(TestCase.class);
-            if (annos != null) {
-                try {
-                    testResults = (ArrayList<TestResult>) method.invoke(this);
-                } catch (InvocationTargetException e) {
-                    try{
-                        throw  e.getCause();
-                    } catch (ComplianceException e1) {
-                        throw e1;
-                    } catch (GeneralComplianceException e1){
-                        testResults.add(e1.getResult());
-                    } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in Sort Test.");
-                    }
-                } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in Sort Test.");
-                }
-
-            }
-        }
-        return testResults;
-    }
 
     /**
      * Method to handle sorting test cases.

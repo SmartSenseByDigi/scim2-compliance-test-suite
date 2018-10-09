@@ -92,12 +92,12 @@ public class UserTest{
                     } catch (GeneralComplianceException e1){
                         testResults.add(e1.getResult());
                     } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in User Test.");
+                        throw new ComplianceException("Error occurred in User Test. "  + throwable.getMessage());
                     }
                 } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in User Test.");
+                    throw new ComplianceException("Error occurred in User Test. " + e.getMessage());
                 } catch (CharonException e) {
-                    throw new ComplianceException("Error occurred in User Test.");
+                    throw new ComplianceException("Error occurred in User Test. " + e.getMessage());
                 }
 
             }

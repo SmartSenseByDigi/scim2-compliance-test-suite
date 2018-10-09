@@ -38,5 +38,10 @@ public class CriticalComplianceException extends Exception {
 	public TestResult getResult() {
 		return result;
 	}
+
+    public String getDetail() {
+        return result.getMessage();
+    }
+
 	
 }

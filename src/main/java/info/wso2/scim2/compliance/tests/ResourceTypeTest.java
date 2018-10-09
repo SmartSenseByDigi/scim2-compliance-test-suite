@@ -45,49 +45,13 @@ import java.util.ArrayList;
 /**
  * This class consists of /ResourceTypeTest endpoint related tests.
  */
-public class ResourceTypeTest {
+public class ResourceTypeTest extends BaseTest {
 
     private ComplianceTestMetaDataHolder complianceTestMetaDataHolder;
     SCIMResourceType scimResourceType = null;
 
     public ResourceTypeTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
-        this.complianceTestMetaDataHolder = complianceTestMetaDataHolder;
-    }
-
-    /**
-     * Test is to get the resource types from service provider
-     * @return
-     * @throws CriticalComplianceException
-     * @throws ComplianceException
-     */
-
-    public ArrayList<TestResult> performTest() throws CriticalComplianceException, ComplianceException {
-        ArrayList<TestResult> testResults = new ArrayList<>();
-        Method[] methods = this.getClass().getMethods();
-        for (Method method : methods) {
-            TestCase annos = method.getAnnotation(TestCase.class);
-            if (annos != null) {
-                try {
-                    testResults.add((TestResult) method.invoke(this));
-                } catch (InvocationTargetException e) {
-                    try{
-                        throw  e.getCause();
-                    } catch (ComplianceException e1) {
-                        throw e1;
-                    } catch (GeneralComplianceException e1) {
-                        testResults.add(e1.getResult());
-                    } catch (CriticalComplianceException e1){
-                        testResults.add(e1.getResult());
-                    } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in ResourceType Test.");
-                    }
-                } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in ResourceType Test.");
-                }
-
-            }
-        }
-        return testResults;
+        super(complianceTestMetaDataHolder);
     }
 
     /**

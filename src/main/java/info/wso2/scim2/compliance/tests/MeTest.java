@@ -91,12 +91,12 @@ public class MeTest {
                     } catch (GeneralComplianceException e1){
                         testResults.add(e1.getResult());
                     } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in Me Test.");
+                        throw new ComplianceException("Error occurred in Me Test. " + throwable.getMessage());
                     }
                 } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in Me Test.");
+                    throw new ComplianceException("Error occurred in Me Test. " + e.getMessage());
                 } catch (CharonException e) {
-                    throw new ComplianceException("Error occurred in Me Test.");
+                    throw new ComplianceException("Error occurred in Me Test. " + e.getMessage());
                 }
 
             }
@@ -227,10 +227,8 @@ public class MeTest {
 
         HttpClient client = HTTPClient.getHttpClient();
 
-        method = (HttpGet) HTTPClient.setAuthorizationHeader(
-                ComplianceConstants.DefinedInstances.DEFINED_USER_USERNAME,
-                ComplianceConstants.DefinedInstances.DEFINED_USER_PASSWORD,
-                method);
+        method = (HttpGet) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
+                
 
         method.setHeader("Accept", "application/json");
 
@@ -321,10 +319,7 @@ public class MeTest {
 
         HttpClient client = HTTPClient.getHttpClient();
 
-        method = (HttpPut) HTTPClient.setAuthorizationHeader(
-                ComplianceConstants.DefinedInstances.DEFINED_USER_USERNAME,
-                ComplianceConstants.DefinedInstances.DEFINED_USER_PASSWORD,
-                method);
+        method = (HttpPut) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
 
         HttpResponse response = null;
         String responseString = "";
@@ -421,10 +416,7 @@ public class MeTest {
         //create user test
         HttpClient client = HTTPClient.getHttpClient();
 
-        method = (HttpPatch) HTTPClient.setAuthorizationHeader(
-                ComplianceConstants.DefinedInstances.DEFINED_USER_USERNAME,
-                ComplianceConstants.DefinedInstances.DEFINED_USER_PASSWORD,
-                method);
+        method = (HttpPatch) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
 
         HttpResponse response = null;
         String responseString = "";
@@ -521,10 +513,7 @@ public class MeTest {
 
         HttpClient client = HTTPClient.getHttpClient();
 
-        method = (HttpDelete) HTTPClient.setAuthorizationHeader(
-                ComplianceConstants.DefinedInstances.DEFINED_USER_USERNAME,
-                ComplianceConstants.DefinedInstances.DEFINED_USER_PASSWORD,
-                method);
+        method = (HttpDelete) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
 
         method.setHeader("Accept", "application/json");
 

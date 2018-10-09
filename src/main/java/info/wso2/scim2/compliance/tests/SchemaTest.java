@@ -21,47 +21,17 @@ import java.util.ArrayList;
 
 /**
  * This class performs the /Schemas test.
+ * Test is to get the service provider configurations from service provider.
  */
-public class SchemaTest {
+public class SchemaTest extends BaseTest {
 
-    private ComplianceTestMetaDataHolder complianceTestMetaDataHolder;
     private SCIMSchema scimSchema = new SCIMSchema();
     /**
      * Initializer.
      * @param complianceTestMetaDataHolder
      */
     public SchemaTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
-        this.complianceTestMetaDataHolder = complianceTestMetaDataHolder;
-    }
-
-    /**
-     * Test is to get the service provider configurations from service provider.
-     **/
-    public ArrayList<TestResult> performTest() throws CriticalComplianceException, ComplianceException {
-        ArrayList<TestResult> testResults = new ArrayList<>();
-        Method[] methods = this.getClass().getMethods();
-        for (Method method : methods) {
-            TestCase annos = method.getAnnotation(TestCase.class);
-            if (annos != null) {
-                try {
-                    testResults.add((TestResult) method.invoke(this));
-                } catch (InvocationTargetException e) {
-                    try{
-                        throw  e.getCause();
-                    } catch (ComplianceException e1) {
-                        throw e1;
-                    } catch (CriticalComplianceException e1){
-                        testResults.add(e1.getResult());
-                    } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in Schema Test.");
-                    }
-                } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in Schema Test.");
-                }
-
-            }
-        }
-        return testResults;
+        super(complianceTestMetaDataHolder);
     }
 
     /**

@@ -93,12 +93,12 @@ public class GroupTest {
                     } catch (GeneralComplianceException e1){
                         testResults.add(e1.getResult());
                     } catch (Throwable throwable) {
-                        throw new ComplianceException("Error occurred in Group Test.");
+                        throw new ComplianceException("Error occurred in Group Test. " + throwable.getMessage());
                     }
                 } catch (IllegalAccessException e) {
-                    throw new ComplianceException("Error occurred in Group Test.");
+                    throw new ComplianceException("Error occurred in Group Test. " + e.getMessage());
                 } catch (CharonException e) {
-                    throw new ComplianceException("Error occurred in Group Test.");
+                    throw new ComplianceException("Error occurred in Group Test. " + e.getMessage());
                 }
 
             }
