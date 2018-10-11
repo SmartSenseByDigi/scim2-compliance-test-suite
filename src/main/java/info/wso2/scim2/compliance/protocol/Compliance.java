@@ -117,7 +117,6 @@ public class Compliance extends HttpServlet {
             return (new Result(e.getDetail()));
         }
 
-
         try {
             // Schema Test
             ConfigTest configTest = new ConfigTest(complianceTestMetaDataHolder);
@@ -179,101 +178,101 @@ public class Compliance extends HttpServlet {
         } catch (ComplianceException e) {
             return (new Result(e.getDetail()));
         }
-        //List Test
-        ListTest listTest = new ListTest(complianceTestMetaDataHolder);
-        ArrayList<TestResult> listTestResults = new ArrayList<>();
-        try {
-            listTestResults = listTest.performTest();
-        } 
-        catch(CriticalComplianceException e){
-            return (new Result(e.getDetail()));
-        }
-        catch (ComplianceException e) {
-            return (new Result(e.getDetail()));
-        }
-        for (TestResult testResult : listTestResults) {
-            results.add(testResult);
-        }
-
-        // Filter Test
-        FilterTest filterTest = new FilterTest(complianceTestMetaDataHolder);
-        ArrayList<TestResult> filterTestResults = new ArrayList<>();
-        try {
-            filterTestResults = filterTest.performTest();
-        } 
-        catch(CriticalComplianceException e){
-            return (new Result(e.getDetail()));
-        }
-        catch (ComplianceException e) {
-            return (new Result(e.getDetail()));
-        }
-        for (TestResult testResult : filterTestResults) {
-            results.add(testResult);
-        }
-
-        // Pagination Test
-        PaginationTest paginationTest = new PaginationTest(complianceTestMetaDataHolder);
-        ArrayList<TestResult> paginationTestResults = new ArrayList<>();
-        try {
-            paginationTestResults = paginationTest.performTest();
-        } 
-        catch(CriticalComplianceException e){
-            return (new Result(e.getDetail()));
-        }
-        catch (ComplianceException e) {
-            return (new Result(e.getDetail()));
-        }
-        for (TestResult testResult : paginationTestResults) {
-            results.add(testResult);
-        }
-
-        // Sort Test
-        SortTest sortTest = new SortTest(complianceTestMetaDataHolder);
-        ArrayList<TestResult> sortTestResults = new ArrayList<>();
-        try {
-            if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getSortSupported()){
-                try {
-                    sortTestResults = sortTest.performTest();
-                } 
-                catch(CriticalComplianceException e){
-                    return (new Result(e.getDetail()));
-                }
-                catch (ComplianceException e) {
-                    return (new Result(e.getDetail()));
-                }
-                for (TestResult testResult : sortTestResults) {
-                    results.add(testResult);
-                }
-            } else {
-                results.add(new TestResult(TestResult.SKIPPED, "Sort Test", "Skipped",null));
-            }
-        } catch (CharonException e) {
-            return (new Result(e.getDetail()));
-        }
-
-        // Bulk Test
-        BulkTest bulkTest = new BulkTest(complianceTestMetaDataHolder);
-        ArrayList<TestResult> bulkTestResults = new ArrayList<>();
-        try {
-            if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getBulkSupported()){
-                try {
-                    bulkTestResults = bulkTest.performTest();
-                } 
-                catch(CriticalComplianceException e){
-                    return (new Result(e.getDetail()));
-                }
-                catch (ComplianceException e) {
-                    return (new Result(e.getDetail()));
-                }
-                for (TestResult testResult : bulkTestResults) {
-                    results.add(testResult);
-                }
-            } else {
-                results.add(new TestResult(TestResult.SKIPPED, "Bulk Test", "Skipped",null));
-            }
-        } catch (CharonException e) {
-            return (new Result(e.getDetail()));
-        }
+//        //List Test
+//        ListTest listTest = new ListTest(complianceTestMetaDataHolder);
+//        ArrayList<TestResult> listTestResults = new ArrayList<>();
+//        try {
+//            listTestResults = listTest.performTest();
+//        }
+//        catch(CriticalComplianceException e){
+//            return (new Result(e.getDetail()));
+//        }
+//        catch (ComplianceException e) {
+//            return (new Result(e.getDetail()));
+//        }
+//        for (TestResult testResult : listTestResults) {
+//            results.add(testResult);
+//        }
+//
+//        // Filter Test
+//        FilterTest filterTest = new FilterTest(complianceTestMetaDataHolder);
+//        ArrayList<TestResult> filterTestResults = new ArrayList<>();
+//        try {
+//            filterTestResults = filterTest.performTest();
+//        }
+//        catch(CriticalComplianceException e){
+//            return (new Result(e.getDetail()));
+//        }
+//        catch (ComplianceException e) {
+//            return (new Result(e.getDetail()));
+//        }
+//        for (TestResult testResult : filterTestResults) {
+//            results.add(testResult);
+//        }
+//
+//        // Pagination Test
+//        PaginationTest paginationTest = new PaginationTest(complianceTestMetaDataHolder);
+//        ArrayList<TestResult> paginationTestResults = new ArrayList<>();
+//        try {
+//            paginationTestResults = paginationTest.performTest();
+//        }
+//        catch(CriticalComplianceException e){
+//            return (new Result(e.getDetail()));
+//        }
+//        catch (ComplianceException e) {
+//            return (new Result(e.getDetail()));
+//        }
+//        for (TestResult testResult : paginationTestResults) {
+//            results.add(testResult);
+//        }
+//
+//        // Sort Test
+//        SortTest sortTest = new SortTest(complianceTestMetaDataHolder);
+//        ArrayList<TestResult> sortTestResults = new ArrayList<>();
+//        try {
+//            if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getSortSupported()){
+//                try {
+//                    sortTestResults = sortTest.performTest();
+//                }
+//                catch(CriticalComplianceException e){
+//                    return (new Result(e.getDetail()));
+//                }
+//                catch (ComplianceException e) {
+//                    return (new Result(e.getDetail()));
+//                }
+//                for (TestResult testResult : sortTestResults) {
+//                    results.add(testResult);
+//                }
+//            } else {
+//                results.add(new TestResult(TestResult.SKIPPED, "Sort Test", "Skipped",null));
+//            }
+//        } catch (CharonException e) {
+//            return (new Result(e.getDetail()));
+//        }
+//
+//        // Bulk Test
+//        BulkTest bulkTest = new BulkTest(complianceTestMetaDataHolder);
+//        ArrayList<TestResult> bulkTestResults = new ArrayList<>();
+//        try {
+//            if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getBulkSupported()){
+//                try {
+//                    bulkTestResults = bulkTest.performTest();
+//                }
+//                catch(CriticalComplianceException e){
+//                    return (new Result(e.getDetail()));
+//                }
+//                catch (ComplianceException e) {
+//                    return (new Result(e.getDetail()));
+//                }
+//                for (TestResult testResult : bulkTestResults) {
+//                    results.add(testResult);
+//                }
+//            } else {
+//                results.add(new TestResult(TestResult.SKIPPED, "Bulk Test", "Skipped",null));
+//            }
+//        } catch (CharonException e) {
+//            return (new Result(e.getDetail()));
+//        }
 
         Statistics statistics = new Statistics();
         for (TestResult result : results) {

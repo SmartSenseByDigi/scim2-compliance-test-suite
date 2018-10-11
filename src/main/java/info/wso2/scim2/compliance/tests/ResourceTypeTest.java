@@ -47,11 +47,17 @@ import java.util.ArrayList;
  */
 public class ResourceTypeTest extends BaseTest {
 
-    private ComplianceTestMetaDataHolder complianceTestMetaDataHolder;
     SCIMResourceType scimResourceType = null;
 
     public ResourceTypeTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
         super(complianceTestMetaDataHolder);
+    }
+
+    @Override
+    public ArrayList<TestResult> performTest() throws CriticalComplianceException, ComplianceException {
+        ArrayList<TestResult> results = new ArrayList<TestResult>();
+        results.add(new TestResult(TestResult.SKIPPED,"Resource Type Test", "Skipped", null));
+        return results;
     }
 
     /**

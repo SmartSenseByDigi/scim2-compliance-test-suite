@@ -41,6 +41,8 @@ $(document).ready(
         };
 
         var handleResponse = function(data) {
+            // reset the state so the user can try again
+            checked = false;
 
             $("#spinner-container2").empty();
 

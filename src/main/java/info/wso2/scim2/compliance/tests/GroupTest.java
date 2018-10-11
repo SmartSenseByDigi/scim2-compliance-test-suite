@@ -63,6 +63,27 @@ public class GroupTest {
                 ComplianceConstants.TestConstants.GROUPS_ENDPOINT;
     }
 
+    // it's ok to be not implemented
+    // https://tools.ietf.org/html/rfc7644#section-3.11
+    private boolean getGroupsSupported(){
+        int code;
+        HttpResponse response = null;
+        try {
+            HttpGet method = new HttpGet(url);
+            HttpClient client = HTTPClient.getHttpClient();
+            method = (HttpGet) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
+
+            method.setHeader("Accept", "application/json");
+            method.setHeader("Content-Type", "application/json");
+            response = client.execute(method);
+            // Read the response body.
+            code = response.getStatusLine().getStatusCode();
+        } catch (Exception e){
+            code = response.getStatusLine().getStatusCode();
+        }
+        return code != 501;
+    }
+
     /**
      * Method to handle test cases.
      * @return
@@ -71,11 +92,15 @@ public class GroupTest {
     public ArrayList<TestResult> performTest() throws ComplianceException {
         ArrayList<TestResult> testResults = new ArrayList<>();
         Method[] methods = this.getClass().getMethods();
+        boolean supported = getGroupsSupported();
         for (Method method : methods) {
             TestCase annos = method.getAnnotation(TestCase.class);
             if (annos != null) {
                 try {
-                    if(method.getName().equals("PatchGroupTest")){
+                    if(supported == false){
+                        testResults.add(new TestResult(TestResult.SKIPPED,
+                                "Group Test - " + method.getName(), "Skipped",null));
+                    }else if(method.getName().equals("PatchGroupTest")){
                         if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getPatchSupported()){
                             testResults.add((TestResult) method.invoke(this));
                         } else {

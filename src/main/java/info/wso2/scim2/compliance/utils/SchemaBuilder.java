@@ -44,7 +44,8 @@ public class SchemaBuilder {
             throws ComplianceException, CriticalComplianceException {
 
         try {
-            JSONArray jsonArray = new JSONArray(jsonSchema);
+            JSONObject schameObject = new JSONObject(jsonSchema);
+            JSONArray jsonArray = schameObject.getJSONArray("resources");
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject resourceObject = jsonArray.getJSONObject(i);
                 String resourceId = null;
@@ -52,7 +53,7 @@ public class SchemaBuilder {
                     resourceId = resourceObject.optString("id");
                 } catch (NullPointerException e) {
                     throw new CriticalComplianceException(new TestResult
-                            (TestResult.ERROR, "Get Schema",
+                                                            (TestResult.ERROR, "Get Schema",
                                     "Could not get schema at url " + url,
                                     ComplianceUtils.getWire(method, jsonSchema,
                                             headerString, responseStatus, subTests)));

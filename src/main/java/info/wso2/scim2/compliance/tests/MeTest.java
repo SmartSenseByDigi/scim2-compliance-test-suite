@@ -56,8 +56,30 @@ public class MeTest {
      */
     public MeTest(ComplianceTestMetaDataHolder complianceTestMetaDataHolder) {
         this.complianceTestMetaDataHolder = complianceTestMetaDataHolder;
-        url =  complianceTestMetaDataHolder.getUrl() +
+        this.url =  complianceTestMetaDataHolder.getUrl() +
                 ComplianceConstants.TestConstants.ME_ENDPOINT;
+    }
+
+
+    // it's ok to be not implemented
+    // https://tools.ietf.org/html/rfc7644#section-3.11
+    private boolean getMeSupported(){
+        int code;
+        HttpResponse response = null;
+        try {
+            HttpGet method = new HttpGet(url);
+            HttpClient client = HTTPClient.getHttpClient();
+            method = (HttpGet) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
+
+            method.setHeader("Accept", "application/json");
+            method.setHeader("Content-Type", "application/json");
+            response = client.execute(method);
+            // Read the response body.
+            code = response.getStatusLine().getStatusCode();
+        } catch (Exception e){
+            code = response.getStatusLine().getStatusCode();
+        }
+        return code != 501;
     }
 
     /**
@@ -67,18 +89,21 @@ public class MeTest {
      */
     public ArrayList<TestResult> performTest() throws ComplianceException {
         ArrayList<TestResult> testResults = new ArrayList<>();
+        boolean meSupported = getMeSupported();
         Method[] methods = this.getClass().getMethods();
         for (Method method : methods) {
             TestCase annos = method.getAnnotation(TestCase.class);
             if (annos != null) {
                 try {
-                    if(method.getName().equals("PatchUserTest")){
+                    if(meSupported == false){
+                        testResults.add(new TestResult(TestResult.SKIPPED,
+                                "Me Test - " + method.getName(), "Skipped",null));
+                    } else if(method.getName().equals("PatchUserTest")){
                         if (complianceTestMetaDataHolder.getScimServiceProviderConfig().getPatchSupported()){
                             testResults.add((TestResult) method.invoke(this));
                         }else {
                             testResults.add(new TestResult(TestResult.SKIPPED,
                                     "Patch Me Test", "Skipped",null));
-
                         }
                     } else{
                         testResults.add((TestResult) method.invoke(this));
@@ -143,7 +168,6 @@ public class MeTest {
                     response.getStatusLine().getReasonPhrase();
 
         } catch (Exception e) {
-            // Read the response body.
             //get all headers
             Header[] headers = response.getAllHeaders();
             for (Header header : headers) {
@@ -151,6 +175,7 @@ public class MeTest {
             }
             responseStatus = response.getStatusLine().getStatusCode() + " "
                     + response.getStatusLine().getReasonPhrase();
+            // Read the
             throw new GeneralComplianceException(new TestResult(TestResult.ERROR, "Create Me",
                     "Could not create default user at url " + url,
                     ComplianceUtils.getWire(method, responseString, headerString, responseStatus, subTests)));
@@ -226,10 +251,7 @@ public class MeTest {
         HttpGet method = new HttpGet(url);
 
         HttpClient client = HTTPClient.getHttpClient();
-
         method = (HttpGet) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
-                
-
         method.setHeader("Accept", "application/json");
 
         HttpResponse response = null;
@@ -296,7 +318,6 @@ public class MeTest {
                             "", ComplianceUtils.getWire(method, responseString, headerString,
                             responseStatus, subTests));
         } else {
-            CleanUpUser(id,"Get Me");
             return new TestResult
                     (TestResult.ERROR, "Get Me",
                             "", ComplianceUtils.getWire(method, responseString, headerString,
@@ -393,7 +414,6 @@ public class MeTest {
                             "", ComplianceUtils.getWire(method, responseString, headerString,
                             responseStatus, subTests));
         } else {
-            CleanUpUser(id,"Update Me");
             return new TestResult
                     (TestResult.ERROR, "Update Me",
                             "", ComplianceUtils.getWire(method, responseString, headerString,
@@ -490,7 +510,6 @@ public class MeTest {
                             "", ComplianceUtils.getWire(method, responseString, headerString,
                             responseStatus, subTests));
         } else {
-            CleanUpUser(id,"Patch Me");
             return new TestResult
                     (TestResult.ERROR, "Patch Me",
                             "", ComplianceUtils.getWire(method, responseString, headerString,
@@ -512,10 +531,12 @@ public class MeTest {
         HttpDelete method = new HttpDelete(url);
 
         HttpClient client = HTTPClient.getHttpClient();
-
         method = (HttpDelete) HTTPClient.setAuthorizationHeader(complianceTestMetaDataHolder, method);
-
         method.setHeader("Accept", "application/json");
+
+        if(id.equals("")){
+            return new TestResult(TestResult.SKIPPED, "Get Me", "", ComplianceUtils.getWire(method, "", "", "",null));
+        }
 
         HttpResponse response = null;
         String responseString = "";
@@ -556,7 +577,6 @@ public class MeTest {
                             "", ComplianceUtils.getWire(method, responseString, headerString,
                             responseStatus, subTests));
         } else {
-            CleanUpUser(id,"Delete Me");
             return new TestResult
                     (TestResult.ERROR, "Delete Me",
                             "", ComplianceUtils.getWire(method, responseString, headerString,
